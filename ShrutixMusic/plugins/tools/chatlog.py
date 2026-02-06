@@ -28,7 +28,7 @@ photo = [
     "https://files.catbox.moe/xyttqa.jpg",
 ]
 
-@app.on_message(filters.new_chat_members, group=2)
+@nand.on_message(filters.new_chat_members, group=2)
 async def join_watcher(_, message):    
     chat = message.chat
     link = await app.export_chat_invite_link(chat.id)
