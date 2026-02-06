@@ -49,7 +49,7 @@ async def join_watcher(_, message):
                 [InlineKeyboardButton(f"sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
             ]))
 
-@app.on_message(filters.left_chat_member)
+@nand.on_message(filters.left_chat_member)
 async def on_left_chat_member(_, message: Message):
     if (await app.get_me()).id == message.left_chat_member.id:
         remove_by = message.from_user.mention if message.from_user else "𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ"
