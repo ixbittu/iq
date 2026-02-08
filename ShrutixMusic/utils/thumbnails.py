@@ -85,10 +85,10 @@ async def get_thumb(videoid: str):
         background = Image.alpha_composite(gradient, blurred)
 
         draw = ImageDraw.Draw(background)
-        font_path_main = "ShrutiMusic/assets/font3.ttf"
-        font_path_small = "ShrutiMusic/assets/font2.ttf"
+        font_path_main = "ShrutixMusic/assets/font3.ttf"
+        font_path_small = "ShrutixMusic/assets/font2.ttf"
 
-        player = Image.open("ShrutiMusic/assets/nand.png").convert("RGBA").resize((1280, 720))
+        player = Image.open("ShrutixMusic/assets/nand.png").convert("RGBA").resize((1280, 720))
         overlay_box = get_overlay_content_box(player)
         content_x1, content_y1, content_x2, content_y2 = overlay_box
         background.paste(player, (0, 0), player)
