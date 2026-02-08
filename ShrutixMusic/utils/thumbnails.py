@@ -115,8 +115,11 @@ async def get_thumb(videoid: str):
         max_thumb_w = int((inner_x2 - inner_x1) * 0.32)
         thumb_size = min(max_thumb_h, max_thumb_w)
 
-        thumb_x = inner_x1
-        thumb_y = inner_y1 + ((inner_y2 - inner_y1) - thumb_size) // 2
+        thumb_x = inner_x1 - int(box_w * 0.01)
+        if thumb_x < content_x1 + 2:
+            thumb_x = content_x1 + 2
+
+        thumb_y = inner_y1 + ((inner_y2 - inner_y1) - thumb_size) // 2 + int(box_h * 0.015)
         if thumb_y < inner_y1:
             thumb_y = inner_y1
         if thumb_y + thumb_size > inner_y2:
@@ -138,7 +141,10 @@ async def get_thumb(videoid: str):
             r, g, b = thumb_color_raw[0], thumb_color_raw[0], thumb_color_raw[0]
         thumb_color = (max(r, 80), max(g, 80), max(b, 80))
 
-        text_x = thumb_x + thumb_size + int(box_w * 0.04)
+        text_x = thumb_x + thumb_size + int(box_w * 0.035)
+        if text_x >= inner_x2 - 10:
+            text_x = inner_x2 - 10
+
         max_text_width = inner_x2 - text_x
 
         def truncate_text(text, max_chars):
@@ -171,6 +177,8 @@ async def get_thumb(videoid: str):
             start_size=26,
             min_size=18,
         )
+        if info_y < title_y + title_font.size + 2:
+            info_y = title_y + title_font.size + 2
         draw.text((text_x, info_y), info_text, (215, 215, 215), font=info_font)
 
         time_font = ImageFont.truetype(font_path_small, 28)
