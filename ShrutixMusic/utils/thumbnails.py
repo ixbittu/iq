@@ -125,16 +125,18 @@ async def get_thumb(videoid: str) -> str:
     
     font = ImageFont.truetype("ShrutixMusic/assets/font.ttf", 28)  
     text = " "
-    text_size = draw.textsize(text, font=font)
-    draw.text((1280 - text_size[0] - 10, 10), text, fill="yellow", font=font)
-    try:
-        os.remove(thumb_path)
-    except OSError:
-        pass
+    bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        draw.text((1280 - text_width - 10, 10), text, fill="yellow", font=font)
+        try:
+            os.remove(thumb_path)
+        except OSError:
+            pass
 
-    bg.save(cache_path)
-    return cache_path
-    
+        bg.save(cache_path)
+        return cache_path
+    except Exception:
+        return YOUTUBE_IMG_URL
 
 
 
