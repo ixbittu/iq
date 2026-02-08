@@ -174,7 +174,7 @@ queue_6 : "<b>🕚 ᴅυʀᴧᴛɪση :</b> υηᴋησᴡη ᴅυʀᴧᴛɪσ�
 queue_7 : "\n**❖ ᴄʟɪᴄᴋ ση ʙυᴛᴛση ʙєʟσᴡ ᴛσ ɢєᴛ ᴡʜσʟє ǫυєυєᴅ ʟɪsᴛ.**"
 queue_8 : "❖ <b>{0} ᴘʟᴧʏєʀ</b>\n\n🎄 <b>sᴛʀєᴧϻɪηɢ :</b> {1}\n\n🔗 <b>sᴛʀєᴧϻ ᴛʏᴘє :</b> {2}\n🥀 <b>ʀєǫυєsᴛєᴅ ʙʏ :</b> {3}\n{4}"
 
-stream_1 : "• <b>Now Playing ♪</b>\n\n<b>• </b> <a href={0}>{1}</a>\n<b>• Playtime :</b> {2} ᴍɪɴᴜᴛᴇs\n<blockquote><b>• by :</b> {3}</blockquote>"
+stream_1 : "• <b>Now Playing ♪</b>\n\n<b>• </b> <a href={0}>{1}</a>\n\n<b>• Playtime :</b> {2} ᴍɪɴᴜᴛᴇs\n<blockquote><b>• by :</b> {3}</blockquote>"
 stream_2 : "• <b>Now Playing ♪</b>\n\n<b>‣ Sᴛʀᴇᴀᴍ ᴛʏᴘᴇ :</b> ʟɪᴠᴇ sᴛʀᴇᴀᴍ [ᴜʀʟ]\n<blockquote><b>• by :</b> {0}</blockquote>"
 
 
