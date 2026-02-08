@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from unidecode import unidecode
 from ytSearch import VideosSearch
 
-from AnonXMusic import app
+from AnonXMusic import nand
 from config import YOUTUBE_IMG_URL
 
 FAILED = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
@@ -95,8 +95,8 @@ async def get_thumb(videoid, user_id):
 
         draw = ImageDraw.Draw(bg)
         try:
-            title_font = ImageFont.truetype("AnonXMusic/assets/font3.ttf", 32)
-            regular_font = ImageFont.truetype("AnonXMusic/assets/font4.ttf", 18)
+            title_font = ImageFont.truetype("ShrutixMusic/assets/font3.ttf", 32)
+            regular_font = ImageFont.truetype("ShrutixMusic/assets/font4.ttf", 18)
         except OSError:
             title_font = regular_font = ImageFont.load_default()
 
@@ -117,14 +117,14 @@ async def get_thumb(videoid, user_id):
         end_text = "Live" if is_live else duration_text
         draw.text((BAR_X + BAR_TOTAL_LEN - (90 if is_live else 60), BAR_Y + 15), end_text, fill="red" if is_live else "black", font=regular_font)
 
-        icons_path = "AnonXMusic/assets/play_icons.png"
+        icons_path = "ShrutixMusic/assets/play_icons.png"
         if os.path.isfile(icons_path):
             ic = Image.open(icons_path).resize((ICONS_W, ICONS_H)).convert("RGBA")
             r, g, b, a = ic.split()
             black_ic = Image.merge("RGBA", (r.point(lambda *_: 0), g.point(lambda *_: 0), b.point(lambda *_: 0), a))
             bg.paste(black_ic, (ICONS_X, ICONS_Y), black_ic)
 
-        font = ImageFont.truetype("AnonXMusic/assets/font3.ttf", 28)  
+        font = ImageFont.truetype("ShrutixMusic/assets/font3.ttf", 28)  
         text = " "
         bbox = draw.textbbox((0, 0), text, font=font)
         text_width = bbox[2] - bbox[0]
