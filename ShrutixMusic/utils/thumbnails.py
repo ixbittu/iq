@@ -46,7 +46,7 @@ def trim_to_width(text: str, font: ImageFont.FreeTypeFont, max_w: int) -> str:
             return text[:i] + ellipsis
     return ellipsis
 
-async def get_thumb(videoid, user_id):
+async def get_thumb(videoid):
     cache_path = f"cache/{videoid}.png"
     if os.path.isfile(cache_path):
         return cache_path
